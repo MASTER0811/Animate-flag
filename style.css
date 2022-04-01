@@ -1,0 +1,90 @@
+*{
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden;
+}
+ul{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+ul li{
+    list-style: none;
+    text-align: center;
+    color: #333;
+    font-size: 3em;
+    font-weight: 700;
+    padding: 5px 20px;
+    border-radius: 10px;
+    transition: .5s;
+
+    cursor: pointer;
+    user-select: none;
+}
+ul:hover li{
+    color: transparent;
+    -webkit-text-stroke: 1px #333;
+}
+
+ul li:hover{
+    color: #333;
+    background: #fff;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.075);
+}
+ul li::before{
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 100vw;
+    height: 100vh;
+    background: #f00;
+    z-index: -1;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    opacity: 0;
+    transition: .5s;
+    color: rgba(0,0,0,0.15);
+    font-size: 18vw;
+    -webkit-text-stroke: 0px #333;
+    letter-spacing: 100px;
+}
+ul li:hover::before{
+    content: attr(data-text);
+    opacity: 1;
+    letter-spacing: 10px;
+}
+
+ul li:nth-child(1)::before{
+    background-image: url(https://cdn.pixabay.com/photo/2013/07/13/11/52/malaysia-158869_960_720.png);
+    background-size: cover;
+}
+ul li:nth-child(2)::before{
+    background-image: url(https://cdn.pixabay.com/photo/2012/04/10/23/05/china-26841_960_720.png);
+    background-size: cover;
+}
+ul li:nth-child(3)::before{
+    background: 
+    linear-gradient(
+        #000000 0%,
+        #000000 33%,
+        #FF0000 33%,
+        #FF0000 66%,
+        #FFCC00 66%,
+        #FFCC00 100%
+    )
+    ;
+}
